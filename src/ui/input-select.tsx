@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import { ChangeEventHandler, PropsWithChildren, ReactElement, useEffect, useRef } from "react";
 import Input from "./input";
-import { InputAlert } from "@/components/input-alert";
+import { InputAlert } from "@/old_components/input-alert";
 
 interface Props {
   alert?: string;

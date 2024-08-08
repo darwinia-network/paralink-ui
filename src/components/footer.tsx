@@ -1,39 +1,19 @@
-import Image from "next/image";
-import { PropsWithChildren } from "react";
-
+import Link from "next/link";
+import data from "../data/data.json";
 export default function Footer() {
   return (
-    <div className="app-footer">
-      <div className="container mx-auto flex h-full items-center justify-between px-middle">
-        <span className="text-sm font-light text-white/50">{`© ${new Date().getFullYear()} Darwinia Network`}</span>
-        <div className="flex shrink-0 items-center gap-5">
-          <SocialLink href="https://github.com/darwinia-network">
-            <Image width={18} height={18} alt="Github" src="/images/social/github.svg" />
-          </SocialLink>
-          <SocialLink href="https://twitter.com/DarwiniaNetwork">
-            <Image width={18} height={18} alt="Twitter" src="/images/social/twitter.svg" />
-          </SocialLink>
-          <SocialLink href="https://discord.com/invite/VcYFYETrw5">
-            <Image width={20} height={20} alt="Discord" src="/images/social/discord.svg" />
-          </SocialLink>
-          <SocialLink href="mailto:hello@darwinia.network">
-            <Image width={18} height={18} alt="Email" src="/images/social/email.svg" />
-          </SocialLink>
-        </div>
+    <section className="flex h-[35px] w-full items-center justify-center px-[30px] lg:h-[56px] lg:justify-between">
+      <p className="text-[12px] leading-[15px] text-[#12161980]">@ 2024 Paralink powerd by Darwinia Network</p>
+      <div className="hidden items-center justify-center gap-[10px] lg:flex">
+        {data.social.map((item: any) => (
+          <Link key={item.name} href={item.url}>
+            <span
+              className="block h-[24px] w-[24px] bg-contain bg-center bg-no-repeat"
+              style={{ background: `url(${item.icon})` }}
+            />
+          </Link>
+        ))}
       </div>
-    </div>
-  );
-}
-
-function SocialLink({ children, href }: PropsWithChildren<{ href: string }>) {
-  return (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
-      className="opacity-60 transition hover:scale-105 hover:opacity-100 active:scale-95"
-    >
-      {children}
-    </a>
+    </section>
   );
 }

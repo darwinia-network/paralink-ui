@@ -26,6 +26,36 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
+@font-face {
+  font-family: JetBrainsMono;
+  src: url("/fonts/EuclidCircularA/EuclidCircularALight.ttf") format("woff2");
+  font-wheit: 100;
+}
+@font-face {
+  font-family: EuclidCircularA;
+  src: url("/fonts/EuclidCircularA/EuclidCircularALight.ttf") format("woff2");
+  font-wheit: 300;
+}
+@font-face {
+  font-family: EuclidCircularA;
+  src: url("/fonts/EuclidCircularA/EuclidCircularARegular.ttf") format("woff2");
+  font-wheit: 400;
+}
+@font-face {
+  font-family: EuclidCircularA;
+  src: url("/fonts/EuclidCircularA/EuclidCircularAMedium.ttf") format("woff2");
+  font-wheit: 500;
+}
+@font-face {
+  font-family: EuclidCircularA;
+  src: url("/fonts/EuclidCircularA/EuclidCircularABold.ttf") format("woff2");
+  font-wheit: 700;
+}
+
+html {
+  font-family: EuclidCircularA;
+}
+
 @layer components {
   .border-radius {
     @apply rounded-2xl;
